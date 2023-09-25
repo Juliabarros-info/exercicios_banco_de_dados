@@ -1,0 +1,57 @@
+--1
+select * from tabela_paises;
+
+--2
+select cidade
+from tabela_paises
+where pais = 'Brazil';
+
+--3
+select cidade 
+from tabela_paises
+where regiao = 'Ceará';
+
+--4
+select regiao, count (regiao)
+from tabela_paises
+where pais = 'China' 
+group by regiao;
+
+--5
+select regiao, count (distinct (regiao))
+from tabela_paises
+where pais = 'Canada' 
+group by regiao;
+
+--6
+select pais, count(distinct(pais))
+from tabela_paises
+group by pais;
+
+--7
+select cidade, count(distinct(cidade))
+from tabela_paises
+where pais = 'Brazil'
+group by cidade;
+
+--8 ERRO!!!!
+select pais, count (regiao)
+from tabela_paises
+group by pais;
+
+--9
+select nome 
+from tabela_paises 
+where nome like 'João%'
+group by nome;
+
+--10
+select nome 
+from tabela_paises 
+where nome like 'John%'
+group by nome;
+
+--11
+select distinct pais 
+from tabela_paises 
+order by pais;
